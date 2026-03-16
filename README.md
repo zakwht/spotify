@@ -34,10 +34,31 @@ The data in `/json` is from the extended streaming history & account data, from 
 
 ### Report
 
-See [report.pdf](./report.pdf).
+See [report.pdf](./report.pdf). Some excerpts from the analysis:
 
-> Total streaming hours across each month, compared to the monthly average (dotted).
+> Total streaming hours across each month in 2025 (dark), vs 2024 (light).
 
 ![Monthly Streaming](./img/monthly_mins_vs_last_year.png)
 
-<img src="img/spcode.svg" alt="Spotify" width="256" />
+> 24-hour listening clock for 2025 (midnight at top, noon at bottom)
+
+<!-- ![Listening clock](./img/listening_clock.png =250x250) -->
+<img src="./img/listening_clock.png" width="400" alt="Listening clock" />
+
+> Top tracks of all time by streaming time
+
+| Track                                 | Hours | Streams | Dates |
+|---------------------------------------|-------|---------|-------|
+| GONE, GONE / THANK YOU                | 26.7  | 319     | 213   |
+| After The Storm                       | 13.7  | 266     | 205   |
+| EARFQUAKE                             | 12.7  | 269     | 188   |
+| I Know The End                        | 12.3  | 139     | 86    |
+| Nettles                               | 12.1  | 112     | 43    |
+| A BOY IS A GUN*                       | 11.6  | 239     | 170   |
+| SWEET / I THOUGHT YOU WANTED TO DANCE | 11.3  | 117     | 89    |
+| All Too Well (10 Minute Version)      | 10.6  | 82      | 69    |
+| Best Friend                           | 10.2  | 162     | 86    |
+| GRoCERIES                             | 9.8   | 189     | 116   |
+
+
+[<img src="img/spcode.svg" alt="Spotify" width="256" />](https://open.spotify.com/user/zakwht)
