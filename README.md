@@ -1,49 +1,43 @@
 # Spotify Stats
 
+<!-- [![top album](https://img.shields.io/badge/dynamic/json?color=f7b4c6&label=top%20album&query=%24.albums[0][1].name&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakwht%2Fspotify-stats%2Fmain%2Fout.json)](./out.json) -->
 [![License](https://img.shields.io/github/license/zakwht/spotify-stats)](./LICENSE.md)
-[![top album](https://img.shields.io/badge/dynamic/json?color=f7b4c6&label=top%20album&query=%24.albums[0][1].name&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakwht%2Fspotify-stats%2Fmain%2Fout.json)](./out.json)
+[![Top Album](https://img.shields.io/badge/top_album-IGOR-f7b4c6)](./README.md)
 
-A javascript program that compiles Spotify streaming history to analyze data with the command line.
+![Listening Activity](./img/day_matrix.png)
 
-### Getting started
+### Data
 
-[Request the extended streaming history](https://support.spotify.com/us/article/data-rights-and-privacy-settings/) of your Spotify account. Add the `.json` files from the export to the `/json` directory, replacing any other files inside.
+The data in `/json` is from the extended streaming history & account data, from Spotify account privacy (see [Spotify Support](https://support.spotify.com/ca-en/article/data-rights-and-privacy-settings/)). Files with sensitive information (e.g. IP addresses) are ignored from this repositor, and the sanitized data is stored in `/csv`.
 
-### Usage
+### Analysis Overview
 
-The the command line explorer with `node stats.js`
+- [`prepare.ipynb`](./prepare.ipynb) Preprocessing & Transforming  
+- [`artists.ipynb`](./artists.ipynb) Artist Analysis  
+  - Top artists 
+  - Top tracks for top artists
+  - Artist streaks
+  - Concert analysis
+- [`tracks.ipynb`](./tracks.ipynb) Song Analysis
+  - Top tracks
+  - Top single-day streams
+  - Song streaks
+- [`time.ipynb`](./time.ipynb) Streaming Analysis
+  - Listening activity
+  - Time of day analysis
+  - Listening time across months
+- [`more.ipynb`](./more.ipynb) Other Analysis
+  - Genre analysis
+  - Top skips, one-hit wonders
+  - Library composition
+- [`alltime.ipynb`](./alltime.ipynb) Analysis Across Years 
 
-Running `node stats.js dist` produces the JSON output in `out.json`
+### Report
 
-#### Global Functions
+See [report.pdf](./report.pdf).
 
-All functions can be supplied with a `datequery` to filter the stream data by time range.
+> Total streaming hours across each month, compared to the monthly average (dotted).
 
-`topTracks(datequery='', n=25)` prints the top `n` most streamed tracks (by number of streams)
+![Monthly Streaming](./img/monthly_mins_vs_last_year.png)
 
-`topAlbums(datequery='', n=25)` prints the top `n` most streamed artists (by stream time)
-
-`topArtists(datequery='', n=25)` prints the top `n` most streamed albums (by stream time)
-
-`findSkips(datequery='', minSkip=20, threshold=80)` prints songs that have been skipped at least `minSkip` times, and at least `threshold`% of time
-
-#### Examples
-
-```javascript
-// print all the top artists of all time
-> topArtists('', -1)
-
-// print the top 25 albums of 2018
-> topAlbums('2018')
-
-// find songs skipped more than 80% of the time & at least 50 times in 2021
-> findSkips('2021', 50, 80)
-
-// print the top 5 tracks on October 7th, 2022
-> topTracks('2022-10-07', 5)
-```
-
-#### Global variables
-
-`all` is the array that contains information on every stream and skip ever
-
+<img src="img/spcode.svg" alt="Spotify" width="256" />
