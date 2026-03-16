@@ -1,7 +1,7 @@
-# Spotify Stats
+# Spotify Streaming Patterns
 
 <!-- [![top album](https://img.shields.io/badge/dynamic/json?color=f7b4c6&label=top%20album&query=%24.albums[0][1].name&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakwht%2Fspotify-stats%2Fmain%2Fout.json)](./out.json) -->
-[![License](https://img.shields.io/github/license/zakwht/spotify-stats)](./LICENSE.md)
+[![License](https://img.shields.io/github/license/zakwht/spotify)](./LICENSE.md)
 [![Top Album](https://img.shields.io/badge/top_album-IGOR-f7b4c6)](./README.md)
 
 ![Listening Activity](./img/day_matrix.png)
